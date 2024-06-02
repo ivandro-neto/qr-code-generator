@@ -1,0 +1,128 @@
+.container{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--accent);
+}
+
+.container h1{
+  font-weight: 1000;
+  color: var(--text);
+}
+
+.qrcontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--off-text);
+  min-width: 100%;
+  min-height: 50%;
+}
+.qrcontainer h1{
+  padding: 2em;
+  background-color: var(--text);
+  color: var(--off-text);
+  border-radius: 20px;
+}
+
+.qrcontainer img{
+  width: 10em;
+}
+a.qrcontainer{
+  position: relative;
+  overflow: hidden;
+}
+a.qrcontainer::after{
+  position: absolute;
+  content: 'Download .png';
+  background-color: var(--off-text);
+  padding: 20px;
+  border-radius: 30px;
+  color: var(--accent);
+  font-weight: 1000;
+  transition: 500ms;
+  opacity: 0;
+  transform: translateY(10vh);
+}
+a.qrcontainer::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: var(--text);
+  color: var(--accent);
+  transition: 500ms;
+  opacity: 0;
+}
+
+a.qrcontainer:hover::before{
+  opacity: .50;
+}
+a.qrcontainer:hover::after{
+  opacity: 1;
+  transform: translateY(0);
+}
+.card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20em;
+  height: auto;
+  gap: 1em;
+  border: 2px solid var(--off-text);
+  background-color: var(--background);
+  padding: 25px 30px;
+  border-radius: 1rem;
+  flex-direction: column;
+}
+
+.card p{
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.input{
+  background-color: var(--off-text);
+  border-radius: 20px;
+  border: none;
+  padding: 10px 20px;
+  background-color: var(--off-text);
+  outline-color: var(--text);
+  outline-width: 2px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  transition: 500ms;
+}
+
+.btn{
+  border: none;
+  color: var(--background);
+  background-color: var(--accent);
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: background-color 500ms;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--text);
+}
+
+footer a{
+  color: var(--off-text);
+  font-weight: 800;
+}
+footer p{
+  color: var(--off-text);
+}
