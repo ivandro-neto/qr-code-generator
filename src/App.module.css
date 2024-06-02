@@ -73,10 +73,10 @@ a.qrcontainer:hover::after{
   align-items: center;
   width: 20em;
   height: auto;
-  gap: 1em;
+  gap: 1.4em;
   border: 2px solid var(--off-text);
   background-color: var(--background);
-  padding: 25px 30px;
+  padding: 30px 20px;
   border-radius: 1rem;
   flex-direction: column;
 }
@@ -106,7 +106,7 @@ a.qrcontainer:hover::after{
 .btn{
   border: none;
   color: var(--background);
-  background-color: var(--accent);
+  background-color: var(--accent-dark);
   padding: 15px 25px;
   border-radius: 30px;
   font-size: 1rem;
@@ -117,12 +117,13 @@ a.qrcontainer:hover::after{
 
 .btn:hover{
   background-color: var(--text);
+  color: var(--off-text);
 }
 
 footer a{
-  color: var(--off-text);
+  color: var(--text);
   font-weight: 800;
 }
 footer p{
-  color: var(--off-text);
+  color: var(--text);
 }
