@@ -6,11 +6,12 @@ function App() {
   const [imageURL, setImageURL] = useState('');
   const [HasData, setHasData] = useState<boolean>(false);
 
-  const handleInputData = (event) => {
-    setUrl(event.target.value)
+  const handleInputData = (event : InputEvent) => {
+    const inputEvent = event.target as HTMLInputElement
+    setUrl(inputEvent.value)
   }
 
-  const GenerateQR = async (event) =>{
+  const GenerateQR = async (event : SubmitEvent) =>{
     event.preventDefault();
     try{
       const qrFile = await QRCode.toDataURL(url)
@@ -36,8 +37,8 @@ function App() {
           </a>
         }
         <p>Link:</p>
-        <input className={styles.input} name="url" type="text" placeholder='https://ivandroneto.com' onChange={handleInputData}/>
-        <button className={styles.btn} onClick={GenerateQR}>
+        <input className={styles.input} name="url" type="text" placeholder='https://ivandroneto.com' onChange={()=>handleInputData}/>
+        <button className={styles.btn} onClick={()=> GenerateQR}>
           Generate
         </button>
       </div>
