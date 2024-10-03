@@ -39,7 +39,7 @@ function App() {
         }
         <p>Link:</p>
         <input className={styles.input} name="url" type="text" placeholder='https://ivandroneto.com' onChange={()=>handleInputData}/>
-        <button className={styles.btn} onClick={()=> GenerateQR}>
+        <button className={styles.btn} onClick={()=> GenerateQR()}>
           Generate
         </button>
       </div>
