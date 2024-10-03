@@ -5,7 +5,7 @@ function App() {
   const [url, setUrl] = useState<string>('');
   const [imageURL, setImageURL] = useState('');
   const [HasData, setHasData] = useState<boolean>(false);
-
+  const [error, setError] = useState('');
   const handleInputData = (event : InputEvent) => {
     const inputEvent = event.target as HTMLInputElement
     setUrl(inputEvent.value)
@@ -17,13 +17,14 @@ function App() {
       const qrFile = await QRCode.toDataURL(url)
       setImageURL(qrFile);
       setHasData(true)
-    }catch (error) {
-      console.error('Error generating QR code:', error);
+    }catch (err) {
+      setError('Error generating QR code: ' + err);
     }
   }
 
   return (
     <main className={styles.container}>
+      {error !== '' & <p>{error}</p>}
       <div className={styles.card}>
         <h1>QR.Me</h1>
         {
