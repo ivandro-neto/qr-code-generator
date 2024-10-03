@@ -5,7 +5,7 @@ function App() {
   const [url, setUrl] = useState<string>('');
   const [imageURL, setImageURL] = useState('');
   const [HasData, setHasData] = useState<boolean>(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState<string>('');
   const handleInputData = (event : InputEvent) => {
     const inputEvent = event.target as HTMLInputElement
     setUrl(inputEvent.value)
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <main className={styles.container}>
-      {error !== '' & <p>{error}</p>}
+      <p>{error}</p>
       <div className={styles.card}>
         <h1>QR.Me</h1>
         {
